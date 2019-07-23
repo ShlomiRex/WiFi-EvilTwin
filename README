@@ -2,6 +2,9 @@
 Create wifi AP that enables users to browse the internet
 Highly customizable (simple bash scripts)
 
+You can also run deauth attack (to disconnect all clients, so then they automatically connect to you)
+https://github.com/ShlomiRex/WiFi-Deauthernticator
+
 ====================================================
 
 hostapd - Host AP
@@ -14,19 +17,11 @@ Used to assign IP for clients on AP.
 
 ====================================================
 
-## Links
-https://nims11.wordpress.com/2012/04/27/hostapd-the-linux-way-to-create-virtual-wifi-access-point/
-https://askubuntu.com/questions/21679/how-to-stop-wireless-ap-hosting-using-network-manager-on-ubuntu
-https://www.raspberrypi.org/forums/viewtopic.php?t=128150
-https://wiki.gentoo.org/wiki/Hostapd#802.11b.2Fg.2Fn_triple_AP
-https://forums.hak5.org/topic/37033-no-access-to-my-fake-ap/
-https://rootsh3ll.com/evil-twin-attack/
-
-## Requierments
+## Requierments ##
 
 You need Debian based OS. This tool was tested on Kali 2018, but should work with every linux distrubution
 
-## Usage
+## Usage ##
 Note: start.sh not working, problem with root directory probably.
 
 * Run setup.sh (Only run it once. Installs dependencies)
@@ -36,3 +31,19 @@ Note: start.sh not working, problem with root directory probably.
 * Run start-hostapd.sh
 
 There you go
+
+
+
+
+
+
+
+
+
+## Links ##
+https://nims11.wordpress.com/2012/04/27/hostapd-the-linux-way-to-create-virtual-wifi-access-point/
+https://askubuntu.com/questions/21679/how-to-stop-wireless-ap-hosting-using-network-manager-on-ubuntu
+https://www.raspberrypi.org/forums/viewtopic.php?t=128150
+https://wiki.gentoo.org/wiki/Hostapd#802.11b.2Fg.2Fn_triple_AP
+https://forums.hak5.org/topic/37033-no-access-to-my-fake-ap/
+https://rootsh3ll.com/evil-twin-attack/
