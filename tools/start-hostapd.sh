@@ -1,3 +1,3 @@
-airmon-ng check
-killall wpa_supplicant
+#airmon-ng check
+#killall wpa_supplicant
 hostapd conf/hostapd.conf

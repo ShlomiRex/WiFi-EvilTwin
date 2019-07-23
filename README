@@ -17,3 +17,16 @@ https://www.raspberrypi.org/forums/viewtopic.php?t=128150
 https://wiki.gentoo.org/wiki/Hostapd#802.11b.2Fg.2Fn_triple_AP
 https://forums.hak5.org/topic/37033-no-access-to-my-fake-ap/
 https://rootsh3ll.com/evil-twin-attack/
+
+
+
+##	Usage
+Note: start.sh not working, problem with root directory probably.
+
+* Run setup.sh
+* Run start-monitor.sh
+* Run set-interface-ip.sh
+* Run start-dnsmasq.sh
+* Run start-hostapd.sh
+
+There you go
