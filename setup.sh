@@ -1,1 +1,1 @@
-sudo apt-get update && sudo apt-get install hostapd
+sudo apt-get update && sudo apt-get install hostapd dnsmasq
