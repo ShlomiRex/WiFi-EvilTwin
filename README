@@ -2,6 +2,11 @@
 
 hostapd - Host AP
 Configuration: /etc/hostapd/hostapd.conf
+Used to open AP wirelessly.
+
+dnsmasq - DHCP server
+Configuration: /etc/dnsmasq.conf
+Used to assign IP for clients on AP.
 
 ====================================================
 
