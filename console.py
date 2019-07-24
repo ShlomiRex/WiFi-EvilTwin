@@ -46,8 +46,16 @@ def print_scripts():
 		i += 1
 	ind = user_input_from_to(0, len(scripts)-1)
 	choice = scripts.items()[ind]
-	print 'Choosing \'' + str(choice[0]) + '\'...'
-	os.system("bash " + str(choice[1]))
+	
+	script_filename = choice[0]
+	script_abs_path = choice[1]
+
+	print 'Choosing \'' + str(script_filename) + '\'...'
+	file_extension = os.path.splitext(script_abs_path)
+	if file_extension == 'sh':
+		os.system("bash " + str(script_abs_path))
+	elif file_extension == 'py':
+		os.system("python " + str(script_abs_path))
 
 def first_screen():
 	print 'WiFi-EvilTwin\n'
