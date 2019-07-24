@@ -52,10 +52,12 @@ def print_scripts():
 
 	print 'Choosing \'' + str(script_filename) + '\'...'
 	file_extension = os.path.splitext(script_abs_path)
-	if file_extension == 'sh':
+	if file_extension[1] == '.sh':
 		os.system("bash " + str(script_abs_path))
-	elif file_extension == 'py':
+	elif file_extension[1] == '.py':
 		os.system("python " + str(script_abs_path))
+	else:
+		print 'ERROR'
 
 def first_screen():
 	print 'WiFi-EvilTwin\n'
