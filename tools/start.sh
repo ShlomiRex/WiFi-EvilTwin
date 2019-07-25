@@ -1,3 +1,6 @@
+echo ">> Restarting apache"
+bash restart-apache2.sh
+
 echo ">>> Enableing Monitor Mode"
 bash start-monitor.sh
 
