@@ -155,7 +155,7 @@ def Interface():
 						print(client + " : " + device_target)
 						DeauthAttack(interface, device_target, client)
 		else:
-			print("\nDevices or Clients table is null\n")
+			print("\nDevices or Clients table is null\n
 			Exit()
 
 	except KeyboardInterrupt:	
