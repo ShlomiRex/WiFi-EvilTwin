@@ -63,14 +63,9 @@ This will eliminate any server that interfers with hostapd.
 
 
 ## Links 
-https://nims11.wordpress.com/2012/04/27/hostapd-the-linux-way-to-create-virtual-wifi-access-point/             # This one really works well for me
-
-https://askubuntu.com/questions/21679/how-to-stop-wireless-ap-hosting-using-network-manager-on-ubuntu
-
-https://www.raspberrypi.org/forums/viewtopic.php?t=128150
-
-https://wiki.gentoo.org/wiki/Hostapd#802.11b.2Fg.2Fn_triple_AP
-
-https://forums.hak5.org/topic/37033-no-access-to-my-fake-ap/
-
-https://rootsh3ll.com/evil-twin-attack/
+* https://nims11.wordpress.com/2012/04/27/hostapd-the-linux-way-to-create-virtual-wifi-access-point/             # This one really works well for me
+* https://askubuntu.com/questions/21679/how-to-stop-wireless-ap-hosting-using-network-manager-on-ubuntu
+* https://www.raspberrypi.org/forums/viewtopic.php?t=128150
+* https://wiki.gentoo.org/wiki/Hostapd#802.11b.2Fg.2Fn_triple_AP
+* https://forums.hak5.org/topic/37033-no-access-to-my-fake-ap/
+* https://rootsh3ll.com/evil-twin-attack/
