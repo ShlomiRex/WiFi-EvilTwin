@@ -6,8 +6,6 @@ Highly customizable (simple bash scripts)
 You can also run deauth attack (to disconnect all clients, so then they automatically connect to you)
 https://github.com/ShlomiRex/WiFi-Deauthernticator
 
-====================================================
-
 ## Dependencies
 
 * hostapd - Host AP
@@ -22,8 +20,6 @@ Used to open AP wirelessly.
 Default configuration: /etc/dnsmasq.conf
 
 Used to assign IP for clients on AP.
-
-====================================================
 
 ## Requierments 
 
@@ -60,6 +56,16 @@ Please make sure to run the command:
 $ airmon-ng check kill
 
 This will eliminate any server that interfers with hostapd.
+
+### Running AP with Deauth script
+To create AP and use deauth script you need 2 wireless adapters capable of monitor mode / packet injection. Adapter 1 will be used as AP and the second will be used as deauth. You can manually run deauth script via the console, or by running $ python tools/deauth.py.
+
+Make sure to set the channel of interface of adapter 2 to the channel of the AP you want to fake. You can find the channel by running the scan.sh script, or with the console.
+
+### Enable internet to users on the AP
+You need another adapter or ethernet cable. This adapter doesn't need to have monitor mode.
+
+Manually change the enable-nat.sh, replace "eth0" with the adapter you have.
 
 
 ## Links 
