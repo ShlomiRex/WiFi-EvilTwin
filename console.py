@@ -103,19 +103,13 @@ def first_screen():
 
 	yn = user_input_Yn('Automatic start?(Y/n)')
 	if yn:
-		os.system("bash start.sh")
+		os.system("bash tools/start.sh")
 	else:
 		print_scripts()
-
-def call_deauth():
-	pass
-
-
 
 
 if __name__ == "__main__"	:
 	init_scripts()
-	call_deauth
 	first_screen()
 
 
