@@ -23,11 +23,9 @@ Used to assign IP for clients on AP.
 
 ## Requierments 
 
-You need Debian based OS. This tool was tested on Kali 2018, but should work with every linux distrubution
+You need the Aptitude package manager (comes with debian) (You can install manually the dependencies). It is highly recommended to use Kali since it comes with dnsmasq instead of systemd-resolv (on ubuntu distros).
 
 ## Usage 
-
-To automatically run:
 $ python console.py
 
 
@@ -66,6 +64,9 @@ Make sure to set the channel of interface of adapter 2 to the channel of the AP 
 You need another adapter or ethernet cable. This adapter doesn't need to have monitor mode.
 
 Manually change the enable-nat.sh, replace "eth0" with the adapter you have.
+
+### Not redirecting users to my website / dnsmasq configuration not working
+The script should killall dnsmasq before the start of dnsmasq. You can type killall dnsmasq before running the console.
 
 
 ## Links 
