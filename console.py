@@ -103,7 +103,7 @@ def first_screen():
 
 	yn = user_input_Yn('Automatic start?(Y/n)')
 	if yn:
-		os.system("bash tools/start.sh")
+		os.system("bash start.sh")
 	else:
 		print_scripts()
 

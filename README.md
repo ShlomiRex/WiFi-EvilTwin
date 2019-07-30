@@ -6,6 +6,9 @@ Highly customizable (simple bash scripts)
 You can also run deauth attack (to disconnect all clients, so then they automatically connect to you)
 https://github.com/ShlomiRex/WiFi-Deauthernticator
 
+## Report
+https://docs.google.com/document/d/1pRLTep1HHcjlyrZKoXwlNAHaTazGWdiJjDP2X9-b4Ag/edit#
+
 ## Dependencies
 
 * hostapd - Host AP
