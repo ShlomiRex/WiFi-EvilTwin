@@ -44,6 +44,9 @@ $ dnsspoof -i <name of interface of AP>
 
 ## Troubleshooting
 
+## DNS not working / No redirection on Mobile
+Disable Mobile Data.
+
 ### Obtaining IP address...
 When you try to connect to the AP, and you see this message or something simillar, the problem is with dnsmasq, spesifically with DHCP. Please check you'r configuration.
 
