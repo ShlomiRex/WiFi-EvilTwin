@@ -1,7 +1,7 @@
 import os
 import collections
 
-os.chdir(r"tools/")
+os.chdir(r"scripts/")
 
 scripts = collections.OrderedDict()
 flag = 0

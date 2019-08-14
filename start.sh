@@ -1,2 +1,2 @@
-cd tools/
+cd scripts/
 bash start.sh
