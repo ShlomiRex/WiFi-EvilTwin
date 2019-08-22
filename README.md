@@ -1,6 +1,18 @@
 # WiFi-EvilTwin 
 Create wifi AP that enables users to browse the internet
 
+
+I'm currently working on my university projects. After that I will focus on this repo. 
+
+## Upcoming
+*  Automation
+*  Ubuntu 18.04 LTS support
+*  Remove hard-coded values to single conf file
+*  Tutorial how to use
+*  Research how to get Wifi to your evil machine without must-have ethernet cable
+*  Allow full packet interception (all traffic) with Wireshark for hostapd
+
+
 Highly customizable (simple bash scripts)
 
 You can also run deauth attack (to disconnect all clients, so then they automatically connect to you)
