@@ -11,12 +11,17 @@ I'm currently working on my university projects. After that I will focus on this
 *  Tutorial how to use
 *  Research how to get Wifi to your evil machine without must-have ethernet cable
 *  Allow full packet interception (all traffic) with Wireshark for hostapd
+*  DNS2Proxy plugin
+
 
 
 Highly customizable (simple bash scripts)
 
 You can also run deauth attack (to disconnect all clients, so then they automatically connect to you)
 https://github.com/ShlomiRex/WiFi-Deauthernticator
+
+## Hardware requierments
+2 wifi adapters with Monitor mode(for deauth) and Master mode(for AP station).
 
 ## Report
 https://docs.google.com/document/d/1pRLTep1HHcjlyrZKoXwlNAHaTazGWdiJjDP2X9-b4Ag/edit#
