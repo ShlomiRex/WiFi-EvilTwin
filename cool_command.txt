@@ -1,0 +1,3 @@
+#Netowkr manager has cool cli interface: 'nmcli'
+nmcli d #NetworkManager devices
+nmcli d w
