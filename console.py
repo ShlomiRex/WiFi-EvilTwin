@@ -19,13 +19,13 @@ def init_scripts():
 		abs_path = os.path.abspath(os.path.join("other/", f))
 		scripts[s] = abs_path
 
-	
+
 
 # x <= y <= z (included)
 def user_input_from_to(fr, to):
 	print('Choose: ',fr,'-',to)
-	choice = eval(input())
-	
+	choice = input()
+
 	if fr <= choice <= to:
 		return choice
 	print("You must enter correct input. Please try again")
