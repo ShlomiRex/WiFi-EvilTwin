@@ -29,7 +29,7 @@ def user_input_from_to(fr, to):
 	if fr <= choice <= to:
 		return choice
 	print "You must enter correct input. Please try again"
-	return user_input(fr, to)
+	return user_input_from_to(fr, to)
 
 def user_input_Yn(text):
 	print text
