@@ -23,17 +23,17 @@ def init_scripts():
 
 # x <= y <= z (included)
 def user_input_from_to(fr, to):
-	print 'Choose: ',fr,'-',to
-	choice = input()
+	print('Choose: ',fr,'-',to)
+	choice = eval(input())
 	
 	if fr <= choice <= to:
 		return choice
-	print "You must enter correct input. Please try again"
+	print("You must enter correct input. Please try again")
 	return user_input(fr, to)
 
 def user_input_Yn(text):
-	print text
-	choice = raw_input()
+	print(text)
+	choice = input()
 	if choice == 'Y' or choice == 'y' or choice == '':
 		return True
 	else:
@@ -42,16 +42,16 @@ def user_input_Yn(text):
 def print_scripts():
 	try:
 		i = 0
-		for k,v in scripts.items():
-			print str(i)+') ',k
+		for k,v in list(scripts.items()):
+			print(str(i)+') ',k)
 			i += 1
 		ind = user_input_from_to(0, len(scripts)-1)
-		choice = scripts.items()[ind]
+		choice = list(scripts.items())[ind]
 		
 		script_filename = choice[0]
 		script_abs_path = choice[1]
 
-		print 'Choosing \'' + str(script_filename) + '\'...'
+		print('Choosing \'' + str(script_filename) + '\'...')
 		file_extension = os.path.splitext(script_abs_path)
 		os.system("clear")
 		if file_extension[1] == '.sh':
@@ -59,8 +59,8 @@ def print_scripts():
 		elif file_extension[1] == '.py':
 			os.system("python " + str(script_abs_path))
 		else:
-			print 'ERROR'
-		print 'Finished running', script_filename,'\n'
+			print('ERROR')
+		print('Finished running', script_filename,'\n')
 		print_scripts()
 
 	except KeyboardInterrupt:
@@ -68,19 +68,19 @@ def print_scripts():
 
 def first_screen():
 
-	print 'Setting wlan0 to managed mode...'
+	print('Setting wlan0 to managed mode...')
 	os.system('bash start-managed.sh')
 	ans = user_input_Yn('Do you want to scan APs? [Y/n]')
 	if ans:
-		print 'Scanning...'
+		print('Scanning...')
 		os.system('bash scan.sh')
 
 	
 
-	print 'Choose AP ESSID:(leave blank for default):'
-	essid = raw_input()
-	print 'Choose AP channel(leave blank for default):'
-	channel = raw_input()
+	print('Choose AP ESSID:(leave blank for default):')
+	essid = input()
+	print('Choose AP channel(leave blank for default):')
+	channel = input()
 
 	open('conf/hostapd.conf', 'w').close()
 	with open("conf/hostapd.conf", "a") as myfile:
