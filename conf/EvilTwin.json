@@ -1,0 +1,13 @@
+{
+	"internet": {
+		"iface": "wlan0"
+	},
+	"evil_ap": {
+		"iface": "wlan1",
+		"ssid": "Shark",
+		"channel": "6"
+	},
+	"dnsmasq": {
+		"port": 53
+	}
+}
