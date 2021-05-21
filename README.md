@@ -59,7 +59,9 @@ Used to assign IP for clients on AP.
 
 
 ## Usage 
-$ python console.py
+$ sudo python console.py
+
+Note: you must run this as root, as this affect network interfaces which require high privillage level.
 
 
 ## Logs 
