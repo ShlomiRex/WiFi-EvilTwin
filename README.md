@@ -26,7 +26,23 @@ https://github.com/ShlomiRex/WiFi-Deauthernticator
 ## Report
 https://docs.google.com/document/d/1pRLTep1HHcjlyrZKoXwlNAHaTazGWdiJjDP2X9-b4Ag/edit#
 
+## Requierments 
+
+You must run this under linux machine.
+
+If you are using Windows, then the best approach is to use WSL2. Install it and you can run linux commands.
+
+I highly recommend to run this under Ubuntu as it was tested with this distrobution.
+
+You need the Aptitude package manager (comes with debian) (You can install manually the dependencies). It is highly recommended to use Kali since it comes with dnsmasq instead of systemd-resolv (on ubuntu distros).
+
 ## Dependencies
+
+$ sudo apt update && sudo apt upgrade && sudo apt install net-tools wireless-tools
+
+* wireless-tools (for iwlist)
+
+* net-tools (for ifconfig)
 
 * hostapd - Host AP
 
@@ -41,9 +57,6 @@ Default configuration: /etc/dnsmasq.conf
 
 Used to assign IP for clients on AP.
 
-## Requierments 
-
-You need the Aptitude package manager (comes with debian) (You can install manually the dependencies). It is highly recommended to use Kali since it comes with dnsmasq instead of systemd-resolv (on ubuntu distros).
 
 ## Usage 
 $ python console.py
